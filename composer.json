@@ -39,6 +39,7 @@
 	"require-dev": {
 		"way/generators": "2.6",
 		"barryvdh/laravel-ide-helper": "1.*",
-		"itsgoingd/clockwork": "1.*"
+		"itsgoingd/clockwork": "1.*",
+		"fzaninotto/faker": "1.4.*@dev"
 	}
 }
