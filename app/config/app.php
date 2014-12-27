@@ -108,8 +108,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		'Way\Generators\GeneratorsServiceProvider',
-		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
-		'Clockwork\Support\Laravel\ClockworkServiceProvider',
+		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider'
 	),
 
 	/*
@@ -175,8 +174,7 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-
-		 'Clockwork' => 'Clockwork\Support\Laravel\Facade',
+        'User' 		      => 'Shop\User'
 	),
 
 );
