@@ -4,8 +4,30 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.1.*"
+		"laravel/framework": "~4.2",
+		"facebook/php-sdk-v4": "~4.0",
+		"pda/pheanstalk": "~2.1",
+        "guzzlehttp/guzzle": "~4.0",
+        "cviebrock/eloquent-sluggable":"2.0",
+		"barryvdh/laravel-cors": "~0.2",
+        "intervention/image": "~2.0",
+        "indatus/dispatcher": "~1.4",
+		"laracasts/utilities": "~1.0",
+	  	"laracasts/flash": "~1.0",
+	  	"laracasts/presenter": "~0.1",
+	  	"laracasts/commander": "~1.0",
+	  	"laracasts/validation": "~1.2"
 	},
+    "require-dev":{
+		"laracasts/testdummy": "~2.0",
+        "way/generators": "~2.0",
+        "mockery/mockery":"~0.9",
+        "fzaninotto/faker": "~1.4",
+        "barryvdh/laravel-ide-helper": "~1.0",
+        "iron-io/iron_mq": "~1.5",
+        "phpunit/phpunit": "~4.0",
+	    "codeception/codeception":"~2.0"
+    },
 	"autoload": {
 		"classmap": [
 			"app/commands",
@@ -35,11 +57,5 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "stable",
-	"require-dev": {
-		"way/generators": "2.6",
-		"barryvdh/laravel-ide-helper": "1.*",
-		"itsgoingd/clockwork": "1.*",
-		"fzaninotto/faker": "1.4.*@dev"
-	}
+	"minimum-stability": "stable"
 }
