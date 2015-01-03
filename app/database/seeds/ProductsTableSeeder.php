@@ -1,33 +1,30 @@
 <?php
-
-// Composer: "fzaninotto/faker": "v1.3.0"
 use Faker\Factory as Faker;
+use Faker\Generator;
+use Shop\Categories\Category;
+use Shop\Products\Product;
+use Shop\Products\Attributes\ProductAttributes;
 
 class ProductsTableSeeder extends Seeder {
 
-	public function run()
-	{
-		$faker = Faker::create();
-        Product::truncate();
-		foreach(range(1, 20) as $index)
-		{
+    /**
+     *
+     */
+    public function run()
+    {
+        $this->command->info('Seeding Products Seeders');
+        $faker = Faker::create();
+        $categories = Category::lists('id');
 
-			Product::create([
-                'title' => $faker->word,
-                'description' => $faker->paragraph(5),
-                'price' => $faker->randomFloat(5, 40),
-                'negotiation' => rand(0,1),
-                'used_for' => $faker->randomNumber(1). 'years',
-                'market_price' => $faker->randomNumber(10, 50),
-                'url' => $faker->url,
-                'delievery' => false,
-                'delievery_area' => null,
-                'warranty_type' => 'none',
-                'warranty_include' => 'none',
-                'warranty_period' => 'none',
-                'category_id' => null
-			]);
-		}
-	}
-
+        foreach (range(1, 100) as $index)
+        {
+            $product = Product::create([
+                'description' => $faker->sentence(20),
+                'price'       => mt_rand(100, 50000),
+                'category_id' => array_rand($categories),
+                'url'         => $faker->url,
+                'title'       => $faker->word,
+            ]);
+        }
+    }
 }

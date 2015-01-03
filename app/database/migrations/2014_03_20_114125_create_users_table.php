@@ -20,12 +20,17 @@ class CreateUsersTable extends Migration {
 			$table->string('password', 60);
             $table->integer('phone')->unsigned();
             $table->integer('mobile')->unsigned();
+            $table->tinyInteger('mobile_verified')->nullable();
             $table->string('street_address')->nullable();
             $table->string('area_location')->nullable();
             $table->string('city')->nullable();
             $table->string('country');
+            $table->string('email_verification',70)->nullable();
+            $table->string('mobile_verification', 70)->nullable();
+
+            $table->nullableTimestamps();
             $table->softDeletes();
-            $table->timestamps();
+            $table->rememberToken();
 		});
 	}
 

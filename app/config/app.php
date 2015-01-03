@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => getenv('LARAVEL_ENV') != 'production' ? true:false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => getenv('domain'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'key' => 'mMoJUbRIqWaCIsKPpO7xdDDYC1a1a7dM',
+	'key' => 'q1Z24qoUPM1Wg6aUHlCKeURLTVN8A7Hu',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -107,8 +107,13 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        //jeffrey's packages
 		'Way\Generators\GeneratorsServiceProvider',
-		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider'
+        'Laracasts\Commander\CommanderServiceProvider',
+        'Laracasts\Utilities\UtilitiesServiceProvider',
+        'Laracasts\Validation\ValidationServiceProvider',
+        'Laracasts\Flash\FlashServiceProvider', //https://github.com/laracasts/flash
 	),
 
 	/*
@@ -174,7 +179,9 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-        'User' 		      => 'Shop\User'
-	),
 
+        'User' 		      => 'Shop\User',
+        'Flash' => 'Laracasts\Flash\Flash'
+	),
+    'cipher' => MCRYPT_RIJNDAEL_256,
 );

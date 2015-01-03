@@ -37,6 +37,12 @@ Route::filter('auth', function()
 {
 	if (Auth::guest()) return Redirect::guest('login');
 });
+/// check to see if current use if admin
+Route::filter('auth.admin', function()
+{
+//    if (Auth::guest()) return Redirect::guest('login');
+//    if( Auth::user() && ! Auth::user()->isAdmin() ) Redirect::home();
+});
 
 
 Route::filter('auth.basic', function()
@@ -73,7 +79,7 @@ Route::filter('guest', function()
 
 Route::filter('csrf', function()
 {
-	if (Session::token() != Input::get('_token'))
+	if (Session::token() !== Input::get('_token'))
 	{
 		throw new Illuminate\Session\TokenMismatchException;
 	}

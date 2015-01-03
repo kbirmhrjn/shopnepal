@@ -1,32 +1,30 @@
 <?php
-
-// Composer: "fzaninotto/faker": "v1.3.0"
 use Faker\Factory as Faker;
-
+use Shop\User;
 class UsersTableSeeder extends Seeder {
 
-	public function run()
-	{
-        $faker = Faker::create();
-        $this->command->info('Preparing Users Table Seeders');
-        User::truncate(); // empty the table
+    public function run()
+    {
+        $this->command->info('Seeding Users Table Seeders ...');
 
-		foreach(range(1, 30) as $index)
-		{
-			User::create([
-                'username' => $faker->userName,
-                'first' => $faker->firstName,
-                'last' => $faker->lastName,
-                'email' => $faker->email,
-                'password' => Hash::make($faker->word),
-                'phone' => $faker->phoneNumber,
-                'mobile' => $faker->randomNumber(10),
-                'mobile_verified' => rand(0,1),
-                'address1' => $faker->address,
-                'address2' => $faker->streetAddress
-			]);
-		}
-        $this->command->info('Finished seeding Users Table');
-	}
+        $faker = Faker::create();
+
+        foreach (range(1, 25) as $index)
+        {
+            User::create([
+                'username'        => $faker->userName,
+                'email'           => $faker->email,
+                'fullname'        => $faker->firstName,
+                'password'        => Hash::make('secret'),
+                'phone'           => $faker->phoneNumber,
+                'mobile'          => $faker->phoneNumber,
+                'mobile_verified' => rand(0, 1),
+                'street_address'  => $faker->streetAddress,
+                'area_location'   => $faker->streetName,
+                'city'            => $faker->city,
+                'country'         => $faker->country
+            ]);
+        }
+    }
 
 }

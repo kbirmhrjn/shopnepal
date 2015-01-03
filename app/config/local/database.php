@@ -13,7 +13,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'ourshop',
+			'database'  => 'shopping',
 			'username'  => 'root',
 			'password'  => 'root',
 			'charset'   => 'utf8',
