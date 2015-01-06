@@ -3,11 +3,12 @@
 class DatabaseSeeder extends Seeder {
 
     protected $tables = [
+            'answers',
             'users',
             'products',
             'categories',
             'images',
-            'product_attributes'
+            'questions',
     ];
 	/**
 	 * Run the database seeds.
