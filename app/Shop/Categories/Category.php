@@ -8,6 +8,14 @@ class Category extends \Eloquent
     protected $fillable = ['title','body','published_at'];
 
     /**
+     * Category has many questions related to its product
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function questions()
+    {
+        return $this->hasMany('Shop\Question','category_id');
+    }
+    /**
      * Retrive child categories
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

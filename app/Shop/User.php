@@ -12,9 +12,9 @@ class User extends \Eloquent implements UserInterface, RemindableInterface {
     use UserTrait, RemindableTrait , SoftDeletingTrait, PresentableTrait;
 
     /**
-     * @var Shop\Presenters\UserPresenter
+     * @var Shop\Presenters\User
      */
-    protected $presenter = 'Shop\Presenters\UserPresenter';
+    protected $presenter = 'Shop\Presenters\User';
 
 	/**
 	 * The database table used by the model.
