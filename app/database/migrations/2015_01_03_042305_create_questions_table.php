@@ -16,8 +16,9 @@ class CreateQuestionsTable extends Migration {
 		{
             $table->increments('id');
             $table->string('title');
-            $table->string('type'); // select, radio, multiple, user
-            $table->text('options')->nullable();
+            $table->string('type')->nullable(); // select, radio, multiple, user
+            $table->string('options')->nullable();
+            $table->string('rules')->nullable();
             $table->integer('category_id')->unsigned();
 
             $table->nullableTimestamps();
